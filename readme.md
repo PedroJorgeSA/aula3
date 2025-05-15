@@ -1,79 +1,20 @@
-# Boilerplate MVC em Node.js com PostgreSQL
+# Explique com suas paalvras o funcionamento do models, controller e fale sobre endopoints no projeto.
 
-Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
+## Models
+O projeto atualmente conta com 3 models dentro das pastas: aluno.js, curso.js, professor.js.
+alunos.js: Realiza o create, para criar um aluno com nome, email e id do curso. Utiliza o update para atualizar nome e email do aluno. E o delete que realiza a exclusão do aluno na tabela.
+curso.js: Realiza o create do curso, com o nome id. Update, atualizando também com nome e id. E o delete excluindo o curso do banco de dados.
+professor.js: Adicione o professor com nome e email. Atualiza, o id, nome e email. Deleta o id do professor e ele no banco de dados.
 
-## Requisitos
+## Controller
+alunoController.js: o arquivo é responsável por entender as requisições relacionadas a alunos na aplicação web, feita com Node.js. Ele importa dois modelos Aluno e Curso, e exporta várias funções para manipular os dados.
+cursoController.js: gerencia as ações relacionadas aos cursos na aplicação. Ele se comunica com o modelo Curso para criar, atualizar e deletar cursos no banco de dados.
+professorController.js: Esse código define o controller de professores, ou seja, as funções responsáveis por lidar com as ações feitas em relação aos professores no sistema. Ele se comunica com o modelo Professor para buscar, criar, atualizar e deletar dados.
 
-- Node.js (versão X.X.X)
-- PostgreSQL (versão X.X.X)
+## Endpoints
+http://localhost:3000/alunos: Endpoint para direcionar para as funções do aluno.
+http://localhost:3000/professores: Endpoint para direcionar que realiza as alterações no professores.
 
-## Instalação
-
-1. **Clonar o repositório:**
-
-```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
-```
-
-2. **Instalar as dependências:**
-    
-```bash
-npm install
-```
-    
-3. **Configurar o arquivo `.env`:**
-    
-Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
-    
-
-Configuração do Banco de Dados
-------------------------------
-
-1. **Criar banco de dados:**
-    
-    Crie um banco de dados PostgreSQL com o nome especificado no seu arquivo `.env`.
-    
-2. **Executar o script SQL de inicialização:**
-    
-```bash
-npm run init-db
-```
-    
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
-    
-
-Funcionalidades
----------------
-
-* **Padrão MVC:** Estrutura organizada em Model, View e Controller.
-* **PostgreSQL:** Banco de dados relacional utilizado para persistência dos dados.
-* **UUID:** Utilização de UUID como chave primária na tabela `users`.
-* **Scripts com `nodemon`:** Utilização do `nodemon` para reiniciar automaticamente o servidor após alterações no código.
-* **Testes:** Inclui estrutura básica para testes automatizados.
-
-Scripts Disponíveis
--------------------
-
-* `npm start`: Inicia o servidor Node.js.
-* `npm run dev`: Inicia o servidor com `nodemon`, reiniciando automaticamente após alterações no código.
-* `npm run test`: Executa os testes automatizados.
-* `npm run test:coverage`: Executa os testes e gera um relatório de cobertura de código.
-
-Estrutura de Diretórios
------------------------
-
-* **`config/`**: Configurações do banco de dados e outras configurações do projeto.
-* **`controllers/`**: Controladores da aplicação (lógica de negócio).
-* **`models/`**: Modelos da aplicação (definições de dados e interações com o banco de dados).
-* **`routes/`**: Rotas da aplicação.
-* **`tests/`**: Testes automatizados.
-* **`views/`**: Views da aplicação (se aplicável).
-
-Contribuição
-------------
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
 
 Licença
 -------
